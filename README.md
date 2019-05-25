@@ -1,7 +1,4 @@
 # Greenfoot Maven Demo
-
-This is a simple Game showcasing Greenfoot development using Maven only.
-
 To get more information on the process of developing without using the Greenfoot IDE, please read [this blogpost](https://blog.lerk.io/making-games-with-greenfoot-without-greenfoot/).
 
 
