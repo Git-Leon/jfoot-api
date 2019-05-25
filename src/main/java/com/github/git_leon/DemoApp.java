@@ -1,12 +1,13 @@
 package com.github.git_leon;
 
-import java.util.Arrays;
+import com.github.git_leon.jfoot.system.JFootApplication;
 
 /**
- * @author Lukas Fülling (lukas@k40s.net)
+ * @author Leon Hunter (xleonhunter@gmail.com)
  */
-public class DemoApp   {
+public class DemoApp {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(args));
+        JFootApplication jFootApplication = new JFootApplication();
+        jFootApplication.run();
     }
 }
