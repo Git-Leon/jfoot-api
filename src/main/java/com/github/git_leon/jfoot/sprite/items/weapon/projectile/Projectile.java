@@ -2,7 +2,6 @@ package com.github.git_leon.jfoot.sprite.items.weapon.projectile;
 
 import com.github.git_leon.jfoot.sprite.Sprite;
 import com.github.git_leon.jfoot.sprite.SpriteCreatorRemover;
-import com.github.git_leon.jfoot.sprite.items.weapon.projectile.ProjectileInterface;
 
 import java.util.function.Supplier;
 
