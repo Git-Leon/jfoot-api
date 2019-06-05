@@ -6,10 +6,10 @@
 
     <groupId>com.github.git-leon</groupId>
     <artifactId>jfoot-api</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
 
 
-    <name>jfoot</name>
+    <name>jfoot-api</name>
     <url>https://jitpack.io/#jitpack/jfoot/1.0.0</url>
 
     <repositories>
