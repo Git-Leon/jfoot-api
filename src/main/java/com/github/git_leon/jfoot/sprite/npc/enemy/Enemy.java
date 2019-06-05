@@ -7,8 +7,8 @@ import com.github.git_leon.jfoot.sprite.SpriteSensorDecorator;
 import com.github.git_leon.jfoot.sprite.npc.ally.Ally;
 import com.github.git_leon.jfoot.sprite.npc.ally.AllyInterface;
 
-public class Enemy  extends AnimatedSprite implements EnemyInterface {
-    private final SpriteCreatorRemover spriteRemover;
+public class Enemy extends AnimatedSprite implements EnemyInterface {
+    protected final SpriteCreatorRemover spriteRemover;
     protected final SpriteSensorDecorator<Ally> spriteSensor;
 
     public Enemy(String basename, String suffix, int noOfImages) {
@@ -19,7 +19,6 @@ public class Enemy  extends AnimatedSprite implements EnemyInterface {
 
     @Override
     public void postAnimationBehavior() {
-        moveLeft(1);
         spriteRemover.destroy(getOneIntersectingObject(AllyInterface.class));
         spriteRemover.destroy(Sprite::isAtEdge, this);
     }

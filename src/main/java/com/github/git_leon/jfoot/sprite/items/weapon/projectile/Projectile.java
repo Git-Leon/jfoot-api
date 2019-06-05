@@ -7,13 +7,13 @@ import java.util.function.Supplier;
 
 public abstract class Projectile<VictimClass extends Sprite> extends Sprite implements ProjectileInterface {
     private final Class<VictimClass> victimClass;
+    private final SpriteCreatorRemover spriteCreatorRemover;
     private int speed = 5;
-    private SpriteCreatorRemover spriteCreatorRemover;
 
-    public Projectile(Class<VictimClass> cls) {
+    public Projectile(Class<VictimClass> victimClass) {
         super("ant.png");
         this.spriteCreatorRemover = new SpriteCreatorRemover(this);
-        this.victimClass = cls;
+        this.victimClass = victimClass;
     }
 
     public void act() {
@@ -48,7 +48,7 @@ public abstract class Projectile<VictimClass extends Sprite> extends Sprite impl
     private void disintegrate(Supplier<Boolean>... conditions) {
         for (Supplier<Boolean> spriteCondition : conditions) {
             if (spriteCondition.get()) {
-                spriteCreatorRemover.destroy(this);
+                spriteCreatorRemover.destroy();
                 return;
             }
         }
