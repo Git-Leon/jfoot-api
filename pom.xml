@@ -8,6 +8,10 @@
     <artifactId>jfoot-api</artifactId>
     <version>1.0</version>
 
+
+    <name>jfoot</name>
+    <url>https://jitpack.io/#jitpack/jfoot/1.0.0</url>
+
     <repositories>
         <repository>
             <id>git-leon-utils</id>

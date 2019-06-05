@@ -13,12 +13,5 @@ public class DemoAppTest {
         jFootApplication.setWorld(new EmptyWorld());
         jFootApplication.getWorld();
         Greenfoot.setWorld(new EmptyWorld());
-
-
-        try {
-            Thread.sleep(9000);
-        } catch (InterruptedException e) {
-            throw new Error(e);
-        }
     }
 }

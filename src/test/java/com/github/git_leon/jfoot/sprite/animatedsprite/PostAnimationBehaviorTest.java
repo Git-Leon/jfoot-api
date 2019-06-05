@@ -103,7 +103,7 @@ public class PostAnimationBehaviorTest {
 
         // when
         sprite.act();
-        int actualXPosition = sprite.getX();
+        int actualXPosition = sprite.getY();
 
         // then
         Assert.assertEquals(expectedYPosition, actualXPosition);
