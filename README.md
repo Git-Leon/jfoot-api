@@ -35,7 +35,7 @@ The purpose of this repository is to
 <dependency>
   <groupId>com.github.git-leon</groupId>
   <artifactId>greenfoot-jetpacksurvivor</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
