@@ -12,9 +12,6 @@ public abstract class Sprite extends Actor implements SpriteInterface {
     protected final List<GreenfootImage> imageList;
     protected final WorldSensorDecoration worldSensor = new WorldSensorDecoration(this);
 
-    public Sprite() {
-        this(new String[0]);
-    }
 
     public Sprite(String imageName) {
         this(new String[]{imageName});
