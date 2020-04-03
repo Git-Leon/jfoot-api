@@ -1,11 +1,13 @@
 package com.github.git_leon.jfoot.sprite;
 
+import greenfoot.Actor;
+
 import java.util.function.Predicate;
 
 public class SpriteCreatorRemover {
-    private final Sprite sprite;
+    private final Actor sprite;
 
-    public SpriteCreatorRemover(Sprite sprite) {
+    public SpriteCreatorRemover(Actor sprite) {
         this.sprite = sprite;
     }
 
@@ -13,23 +15,23 @@ public class SpriteCreatorRemover {
         destroy(sprite);
     }
 
-    public void destroy(Sprite sprite) {
+    public void destroy(Actor sprite) {
         destroy((x) -> true, sprite);
     }
 
-    public void destroy(Predicate<Sprite> predicate, Sprite sprite) {
+    public void destroy(Predicate<Actor> predicate, Actor sprite) {
         if (predicate.test(sprite)) {
-            this.sprite.getWorld().removeSprite(sprite);
+            this.sprite.getWorld().removeObject(sprite);
         }
     }
 
-    public void add(Sprite sprite) {
+    public void add(Actor sprite) {
         add((x) -> true, sprite);
     }
 
-    public void add(Predicate<Sprite> predicate, Sprite sprite) {
+    public void add(Predicate<Actor> predicate, Actor sprite) {
         if (predicate.test(sprite)) {
-            this.sprite.getWorld().addSprite(sprite, this.sprite.getX(), this.sprite.getY());
+            this.sprite.getWorld().addObject(sprite, this.sprite.getX(), this.sprite.getY());
         }
     }
 }

@@ -1,8 +1,8 @@
 package com.github.git_leon.jfoot.sprite;
 
-import com.github.git_leon.jfoot.world.AbstractJFootWorld;
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.World;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,13 +10,18 @@ import java.util.List;
 
 public abstract class Sprite extends Actor implements SpriteInterface {
     protected final List<GreenfootImage> imageList;
-    protected final WorldSensorDecoration worldSensor = new WorldSensorDecoration(this);
 
+    public Sprite(Actor actor) {
+        this(actor.getImage());
+    }
+
+    public Sprite(SpriteInterface spriteDecoratee) {
+        this(spriteDecoratee.getImageList());
+    }
 
     public Sprite(String imageName) {
         this(new String[]{imageName});
     }
-
 
     public Sprite(String[] imageNames) {
         this.imageList = new ArrayList<>();
@@ -42,20 +47,9 @@ public abstract class Sprite extends Actor implements SpriteInterface {
         this(Arrays.asList(image));
     }
 
-    public void moveLeft(int xOffset) {
-        setLocation(getX() - xOffset, getY());
-    }
-
-    public void moveRight(int xOffset) {
-        moveLeft(-xOffset);
-    }
-
-    public void moveUp(int yOffset) {
-        setLocation(getX(), getY()-yOffset);
-    }
-
-    public void moveDown(int yOffset) {
-        moveUp(-yOffset);
+    @Override
+    public List<GreenfootImage> getImageList() {
+        return imageList;
     }
 
     @Override
@@ -64,16 +58,11 @@ public abstract class Sprite extends Actor implements SpriteInterface {
     }
 
     @Override
-    public final AbstractJFootWorld getWorld() {
-        return (AbstractJFootWorld) super.getWorld();
+    public final World getWorld() {
+        return super.getWorld();
     }
 
-    @Override
-    public final Sprite getOneIntersectingObject(Class<?> cls) {
-        return (Sprite) super.getOneIntersectingObject(cls);
-    }
-
-    public void setLocation(SpriteInterface actor) {
+    public void setLocation(Actor actor) {
         setLocation(actor.getX(), actor.getY());
     }
 

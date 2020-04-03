@@ -20,6 +20,6 @@ public class Enemy extends AnimatedSprite implements EnemyInterface {
     @Override
     public void postAnimationBehavior() {
         spriteRemover.destroy(getOneIntersectingObject(AllyInterface.class));
-        spriteRemover.destroy(Sprite::isAtEdge, this);
+        spriteRemover.destroy((a) -> a.isAtEdge(), this);
     }
 }

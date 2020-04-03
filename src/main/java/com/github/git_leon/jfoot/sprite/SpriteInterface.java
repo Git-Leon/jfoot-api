@@ -1,7 +1,10 @@
 package com.github.git_leon.jfoot.sprite;
 
-import com.github.git_leon.jfoot.world.AbstractJFootWorld;
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.World;
+
+import java.util.List;
 
 /**
  * A common interface between Sprite, SpriteFacade, and SpriteDecorator
@@ -29,16 +32,12 @@ public interface SpriteInterface {
 
     void turn(int degrees);
 
+    <WorldType extends World> WorldType getWorld();
 
-    void moveLeft(int xOffset);
 
-    void moveRight(int xOffset);
+    default <ActorType extends Actor> ActorType getOneObjectAtOffset(int x, int y, Class<ActorType> cls) {
+        return getOneObjectAtOffset(x, y, cls);
+    }
 
-    void moveUp(int yOffset);
-
-    void moveDown(int yOffset);
-
-    <SpriteSubType extends SpriteInterface> SpriteSubType getOneObjectAtOffset(int x, int y, Class<SpriteSubType> cls);
-
-    <SpriteWorldSubType extends AbstractJFootWorld> SpriteWorldSubType getWorld();
+    List<GreenfootImage> getImageList();
 }

@@ -1,6 +1,6 @@
 package com.github.git_leon.jfoot.sprite;
 
-public class WorldSensorDecoration extends SpriteFacade {
+public class WorldSensorDecoration extends ActorWrapperImpl {
 
     public WorldSensorDecoration(Sprite sprite) {
         super(sprite);
@@ -11,8 +11,8 @@ public class WorldSensorDecoration extends SpriteFacade {
     }
 
     public boolean atWorldEdge(int x, int y) {
-        int xPosition = sprite.getX();
-        int yPosition = sprite.getY();
+        int xPosition = actor.getX();
+        int yPosition = actor.getY();
 
         if (xPosition < x || xPosition > getWorld().getWidth() - x) {
             return true;
@@ -23,7 +23,7 @@ public class WorldSensorDecoration extends SpriteFacade {
 
     public void turnAtEdge(int edgeOffset, int degree) {
         if (atWorldEdge(edgeOffset)) {
-            sprite.turn(degree);
+            actor.turn(degree);
         }
     }
 
@@ -36,7 +36,7 @@ public class WorldSensorDecoration extends SpriteFacade {
     }
 
     public void disappearAtEdge(int x, int y) {
-        if (atWorldEdge(x, y)) getWorld().removeObject(getSprite());
+        if (atWorldEdge(x, y)) getWorld().removeObject(getActor());
     }
 
 }

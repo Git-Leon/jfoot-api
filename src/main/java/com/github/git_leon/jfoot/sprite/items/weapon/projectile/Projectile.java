@@ -2,6 +2,7 @@ package com.github.git_leon.jfoot.sprite.items.weapon.projectile;
 
 import com.github.git_leon.jfoot.sprite.Sprite;
 import com.github.git_leon.jfoot.sprite.SpriteCreatorRemover;
+import greenfoot.Actor;
 
 import java.util.function.Supplier;
 
@@ -35,7 +36,7 @@ public abstract class Projectile<VictimClass extends Sprite> extends Sprite impl
     }
 
     private void hit(Class<? extends Sprite> cls) {
-        Sprite sprite = getOneIntersectingObject(cls);
+        Actor sprite = getOneIntersectingObject(cls);
         if (sprite != null) {
             spriteCreatorRemover.destroy(sprite);
         }

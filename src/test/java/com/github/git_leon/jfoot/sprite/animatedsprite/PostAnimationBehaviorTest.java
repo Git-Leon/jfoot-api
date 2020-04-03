@@ -28,7 +28,7 @@ public class PostAnimationBehaviorTest {
         this.sprite = new AnimatedSprite(Arrays.asList(new JFootTextImage("", 0,Color.WHITE))) {
             @Override
             public void postAnimationBehavior() {
-                moveRight(1);
+                move(1);
             }
         };
         this.world.addObject(sprite, 0, 0);
@@ -49,7 +49,7 @@ public class PostAnimationBehaviorTest {
         this.sprite = new AnimatedSprite(Arrays.asList(new JFootTextImage("", 0,Color.WHITE))) {
             @Override
             public void postAnimationBehavior() {
-                moveRight(1);
+                move(1);
             }
         };
         this.world.addObject(sprite, 0, 0);
@@ -63,49 +63,4 @@ public class PostAnimationBehaviorTest {
         // then
         Assert.assertEquals(expectedXPosition, actualXPosition);
     }
-
-
-
-    @Test
-    public void test2() {
-        // given
-        this.sprite = new AnimatedSprite(Arrays.asList(new JFootTextImage("", 0,Color.WHITE))) {
-            @Override
-            public void postAnimationBehavior() {
-                moveUp(1);
-            }
-        };
-        this.world.addObject(sprite, 1, 1);
-        int originalYPosition = sprite.getY();
-        int expectedYPosition = originalYPosition-1;
-
-        // when
-        sprite.act();
-        int actualXPosition = sprite.getY();
-
-        // then
-        Assert.assertEquals(expectedYPosition, actualXPosition);
     }
-
-
-    @Test
-    public void test3() {
-        // given
-        this.sprite = new AnimatedSprite(Arrays.asList(new JFootTextImage("", 0,Color.WHITE))) {
-            @Override
-            public void postAnimationBehavior() {
-                moveDown(1);
-            }
-        };
-        this.world.addObject(sprite, 1, 1);
-        int originalYPosition = sprite.getY();
-        int expectedYPosition = originalYPosition+1;
-
-        // when
-        sprite.act();
-        int actualXPosition = sprite.getY();
-
-        // then
-        Assert.assertEquals(expectedYPosition, actualXPosition);
-    }
-}
