@@ -4,7 +4,7 @@
   <groupId>com.github.git-leon</groupId>
   <artifactId>jfoot-api</artifactId>
   <name>jfoot-api</name>
-  <version>1.0.1</version>
+  <version>1.0.3</version>
   <url>https://jitpack.io/#jitpack/jfoot/1.0.0</url>
   <build>
     <plugins>

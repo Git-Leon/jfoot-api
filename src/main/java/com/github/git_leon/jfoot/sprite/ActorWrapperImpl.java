@@ -10,6 +10,11 @@ import greenfoot.Actor;
 public class ActorWrapperImpl implements ActorWrapperInterface {
     protected final Actor actor;
 
+    public ActorWrapperImpl(ActorWrapperInterface sprite) {
+        this.actor = sprite.getActor();
+    }
+
+
     public ActorWrapperImpl(Actor sprite) {
         this.actor = sprite;
     }

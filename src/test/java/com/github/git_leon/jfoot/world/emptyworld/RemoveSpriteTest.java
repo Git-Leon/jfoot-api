@@ -15,8 +15,8 @@ public class RemoveSpriteTest {
     @Before
     public void setup() {
         this.app = new JFootApplication();
-        app.run();
         this.world = new EmptyWorld();
+        app.run();
         app.setWorld(world);
     }
 

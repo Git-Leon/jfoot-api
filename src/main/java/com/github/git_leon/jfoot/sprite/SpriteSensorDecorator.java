@@ -5,7 +5,7 @@ import com.github.git_leon.collectionutils.maps.InvertableMap;
 import java.util.List;
 import java.util.TreeSet;
 
-public class SpriteSensorDecorator<SpriteSubType extends Sprite> {
+public class SpriteSensorDecorator<SpriteSubType extends SpriteInterface> {
 
 
     private final Sprite sprite;

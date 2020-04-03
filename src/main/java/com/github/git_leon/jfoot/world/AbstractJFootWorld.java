@@ -1,6 +1,6 @@
 package com.github.git_leon.jfoot.world;
 
-import com.github.git_leon.jfoot.sprite.Sprite;
+import greenfoot.Actor;
 import greenfoot.World;
 
 public abstract class AbstractJFootWorld extends World implements JFootWorldInterface {
@@ -12,17 +12,17 @@ public abstract class AbstractJFootWorld extends World implements JFootWorldInte
     abstract protected void init();
 
     @Override
-    public void removeSprite(Sprite sprite) {
+    public void removeSprite(Actor sprite) {
         super.removeObject(sprite);
     }
 
     @Override
-    public void addSprite(Sprite sprite, int x, int y) {
+    public void addSprite(Actor sprite, int x, int y) {
         super.addObject(sprite, x, y);
     }
 
     @Override
-    public boolean containsSprite(Sprite sprite) {
+    public boolean containsSprite(Actor sprite) {
         return this.getObjects(sprite.getClass()).contains(sprite);
     }
 }

@@ -1,8 +1,13 @@
 package com.github.git_leon.jfoot.sprite;
 
-public class WorldSensorDecoration extends ActorWrapperImpl {
+import greenfoot.Actor;
 
-    public WorldSensorDecoration(Sprite sprite) {
+public class WorldSensorDecoration extends ActorWrapperImpl {
+    public WorldSensorDecoration(Actor actor) {
+        this(new ActorWrapperImpl(actor));
+    }
+
+    public WorldSensorDecoration(ActorWrapperInterface sprite) {
         super(sprite);
     }
 
