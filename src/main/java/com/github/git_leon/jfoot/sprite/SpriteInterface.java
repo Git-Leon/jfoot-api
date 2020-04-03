@@ -6,7 +6,7 @@ import greenfoot.GreenfootImage;
 /**
  * A common interface between Sprite, SpriteFacade, and SpriteDecorator
  */
-public interface SpriteInterface<SpriteSubType extends SpriteInterface> {
+public interface SpriteInterface {
     void act();
 
     int getX() throws IllegalStateException;
@@ -38,7 +38,7 @@ public interface SpriteInterface<SpriteSubType extends SpriteInterface> {
 
     void moveDown(int yOffset);
 
-    SpriteSubType getOneObjectAtOffset(int x, int y, Class<SpriteSubType> cls);
+    <SpriteSubType extends SpriteInterface> SpriteSubType getOneObjectAtOffset(int x, int y, Class<SpriteSubType> cls);
 
     <SpriteWorldSubType extends AbstractJFootWorld> SpriteWorldSubType getWorld();
 }
