@@ -34,8 +34,8 @@ The purpose of this repository is to
 ```xml
 <dependency>
   <groupId>com.github.git-leon</groupId>
-  <artifactId>greenfoot-jetpacksurvivor</artifactId>
-  <version>1.0.1</version>
+  <artifactId>jfoot-api</artifactId>
+  <version>1.0.2</version>
 </dependency>
 ```
 
